@@ -1,9 +1,15 @@
 ---
 interface Props {
-  title: string;
+  title?: string;
+  description?: string;
+  image?: string;
 }
 
-const { title } = Astro.props;
+const {
+  title = 'AnfryDev Website',
+  description = 'My personal website',
+  image = '',
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -12,11 +18,37 @@ const { title } = Astro.props;
     <meta charset='UTF-8' />
     <meta name='description' content='Astro description' />
     <meta name='viewport' content='width=device-width' />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <link rel='icon' href='/anfrydev.png' />
     <meta name='generator' content={Astro.generator} />
+
+    <!-- Open Grpah Meta -->
+    <meta property='og:type' content='website' />
+    <meta property='og:url' content={Astro.url} />
+    <meta property='og:title' content={title} />
+    <meta property='og:description' content={description} />
+    <meta property='og:image' content={image} />
+    <meta property='og:image:alt' content={description} />
+
+    <!-- Twitter Meta -->
+    <meta property='twitter:card' content='summary_large_image' />
+    <meta property='twitter:url' content={Astro.url} />
+    <meta property='twitter:title' content={title} />
+    <meta property='twitter:description' content={description} />
+    <meta property='twitter:image' content={image} />
+    <meta property='twitter:image:alt' content={description} />
+
     <title>{title}</title>
   </head>
-  <body>
+  <body
+    class='min-h-screen grid grid-rows-[auto,1fr,auto] bg-gradient-radial bg-[#18181b] text-white'
+  >
     <slot />
   </body>
 </html>
+
+<style is:global>
+  @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700&display=swap');
+  body {
+    font-family: 'Titillium Web', sans-serif;
+  }
+</style>
