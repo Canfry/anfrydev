@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import Header from '../components/Header.astro';
 interface Props {
   title?: string;
   description?: string;
@@ -40,8 +42,16 @@ const {
     <title>{title}</title>
   </head>
   <body
-    class='min-h-screen grid grid-rows-[auto,1fr,auto] bg-gradient-radial bg-[#18181b] text-white'
+    class='min-h-screen grid grid-rows-[auto,1fr,auto] bg-[#18181b] -z-30 text-white relative'
   >
+    <Image
+      src='/public/bg-image.jpg'
+      alt='background-image'
+      width={1024}
+      height={1024 / 2}
+      class='absolute top-0 left-0 w-full h-full -z-20 aspect-thumbnail object-cover opacity-5'
+    />
+    <Header />
     <slot />
   </body>
 </html>
