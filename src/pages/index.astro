@@ -1,7 +1,33 @@
 ---
+import Main from '../components/Main.astro';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title='Welcome to AnfryDev.'>
-  <main></main>
+  <Main>
+    <h2 class='text-2xl text-zinc-500'></h2>
+    <h1 class='text-7xl mt-5' id='demo'>
+      I build <span class='text-[#07B6D5]'>websites</span> and <span
+        class='text-purple-600'>web applications</span
+      >.
+    </h1>
+    <p class='text-3xl font-thin mt-5'>
+      I'm a fullstack developer who turns your projects/business into digital
+      content.
+    </p>
+    <div class='flex items-center justify-start gap-x-4 mt-8'>
+      <a href='/work'>
+        <button
+          class='rounded-lg max-sm:py-1 max-sm:px-2 max-sm:text-xl py-2 px-4 text-2xl bg-cyan-500 hover:bg-cyan-600 text-white'
+          >My Work</button
+        >
+      </a>
+      <a href='/contact'>
+        <button
+          class='rounded-lg max-sm:py-1 max-sm:px-2 max-sm:text-xl py-2 px-4 text-2xl bg-purple-600 hover:bg-purple-700 text-white'
+          >Contact Me</button
+        >
+      </a>
+    </div>
+  </Main>
 </Layout>

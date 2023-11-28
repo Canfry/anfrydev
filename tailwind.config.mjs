@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       aspectRatio: {
-        thumbnail: '2',
+        thumbnail: '1.3',
       },
     },
   },
