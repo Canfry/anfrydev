@@ -1,0 +1,34 @@
+[
+  {
+    "header": "My personal Blog",
+    "description": "Creation of my personal blog, using Astro framework and Tailwindcss.",
+    "repo": "https://github.com/Canfry/blog-git-issue",
+    "website": "https://blog.anfrydev.com/",
+    "image": "./images/anfryblog.png",
+    "skills": ["Astro", "Tailwindcss"]
+  },
+  {
+    "header": "House Marketplace",
+    "description": "Creating a marketplace where you can manage sales or rent for your properties.",
+    "repo": "https://github.com/Canfry/house_marketplace",
+    "website": "https://house-marketplace-ohnfpalam-canfry.vercel.app/",
+    "image": "./images/house-marketplace.png",
+    "skills": ["React", "Firebase", "CSS"]
+  },
+  {
+    "header": "Community Blog",
+    "description": "Blog platform where users can create their own blog and share their knowledge and/or experience.",
+    "repo": "https://github.com/Canfry/blog-platform",
+    "website": "https://community-blog-dia1.onrender.com/",
+    "image": "./images/communityblog.png",
+    "skills": ["Flask", "PostgresqlDB", "Bootstrap"]
+  },
+  {
+    "header": "Tasks List",
+    "description": "A simple but functional task list, where you can add, edit and delete tasks.",
+    "repo": "https://github.com/Canfry/myTasks",
+    "website": "https://mytasks.deno.dev/",
+    "image": "./images/tasks.png",
+    "skills": ["Fresh", "Typescript", "Tailwindcss"]
+  }
+]
