@@ -10,46 +10,48 @@ import Layout from '../layouts/Layout.astro';
     <div
       class='grid grid-cols-1 px-8 py-10 bg-zinc-950/40 mt-8 max-md:w-full w-[60%]'
     >
-      <div class='grid grid-cols-1 gap-6'>
-        <label class='block'>
-          <span class='text-zinc-300 text-lg'>Name</span>
-          <input
-            type='text'
-            name='name'
-            id='name'
-            placeholder='Enter your name'
-            class='mt-1 block w-full rounded-sm bg-zinc-950/80 border-transparent outline-orange-400 py-2 px-3'
-          />
-        </label>
-        <label class='block'>
-          <span class='text-zinc-300 text-lg'>Email</span>
-          <input
-            type='email'
-            name='email'
-            id='email'
-            placeholder='Enter your email'
-            class='mt-1 block w-full rounded-sm bg-zinc-950/80 border-transparent outline-orange-400 py-2 px-3'
-          />
-        </label>
-        <label class='block'>
-          <span class='text-zinc-300 text-lg'>Message</span>
-          <textarea
-            name='message'
-            id='message'
-            rows='3'
-            placeholder='Enter your message'
-            class='mt-1 block w-full rounded-sm bg-zinc-950/80 border-transparent outline-orange-400 py-2 px-3'
-          ></textarea>
-        </label>
-        <div class='w-full flex justify-start'>
-          <button
-            type='submit'
-            class='inline-flex items-center px-4 py-2 text-lg font-medium rounded-md text-zinc-700 bg-orange-400 hover:bg-orange-500'
-          >
-            Submit
-          </button>
+      <form action='/api/sendEmail.json' method='post'>
+        <div class='grid grid-cols-1 gap-6'>
+          <label class='block'>
+            <span class='text-zinc-300 text-lg'>Name</span>
+            <input
+              type='text'
+              name='name'
+              id='name'
+              placeholder='Enter your name'
+              class='mt-1 block w-full rounded-sm bg-zinc-950/80 border-transparent outline-orange-400 py-2 px-3'
+            />
+          </label>
+          <label class='block'>
+            <span class='text-zinc-300 text-lg'>Email</span>
+            <input
+              type='email'
+              name='email'
+              id='email'
+              placeholder='Enter your email'
+              class='mt-1 block w-full rounded-sm bg-zinc-950/80 border-transparent outline-orange-400 py-2 px-3'
+            />
+          </label>
+          <label class='block'>
+            <span class='text-zinc-300 text-lg'>Message</span>
+            <textarea
+              name='message'
+              id='message'
+              rows='3'
+              placeholder='Enter your message'
+              class='mt-1 block w-full rounded-sm bg-zinc-950/80 border-transparent outline-orange-400 py-2 px-3'
+            ></textarea>
+          </label>
+          <div class='w-full flex justify-start'>
+            <button
+              type='submit'
+              class='inline-flex items-center px-4 py-2 text-lg font-medium rounded-md text-zinc-700 bg-orange-400 hover:bg-orange-500'
+            >
+              Submit
+            </button>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </Layout>
