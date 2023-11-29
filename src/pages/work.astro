@@ -5,17 +5,16 @@ import Layout from '../layouts/Layout.astro';
 import ProjectsList from '../components/ProjectsList.astro';
 
 const allProjects = await getCollection('projects');
-const projects = allProjects.flatMap((project) => {
-  return project.data;
-});
-console.log(projects);
+// const projects = allProjects.flatMap((project) => {
+//   return project;
+// });
+// console.log(projects);
 ---
 
 <Layout>
   <Main>
     <h1 class='text-4xl text-left mb-4'>My Work</h1>
-    <hr class='w-full h-[1px] bg-cyan-500 border-none' />
-    <hr />
-    <ProjectsList projects={projects} />
+    <hr class='w-full h-[1px] bg-slate-500 border-none mb-16' />
+    <ProjectsList projects={allProjects} />
   </Main>
 </Layout>

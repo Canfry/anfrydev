@@ -1,12 +1,60 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+
+import { Image } from 'astro:assets';
+
 interface Props {
   project: CollectionEntry<'projects'>;
 }
 
 const { project } = Astro.props;
+console.log(project);
 ---
 
-<div>
-  <p>{project.data}</p>
-</div>
+{
+  project.data.map((proj) => (
+    <article class='rounded-2xl shadow-md hover:shadow-lg hover:shadow-zinc-600 shadow-zinc-600 py-1 transition-all ease-out duration-500'>
+      <a href={`/blog/${proj.header}`}>
+        <Image
+          src={proj.image}
+          alt={proj.header}
+          width={1024}
+          height={1024 / 2}
+          class='rounded-t-2xl shadow-xl mb-6 aspect-thumbnail object-cover'
+        />
+      </a>
+      <a
+        href={`/blog/${proj.header}`}
+        class='text-3xl text-cyan-300 mb-4 font-thin inline-block px-4'
+      >
+        {proj.header}
+      </a>
+      <p class='text-zinc-300 text-lg mb-4 line-clamp-3 px-4'>
+        {proj.description}
+      </p>
+      <div class='px-4 flex items-center justify-between'>
+        <a
+          href={proj.website}
+          target='_blank'
+          rel='noopener noreferrer'
+          class='p-2 border-slate-500 border-[1px] rounded-2xl'
+        >
+          <button>Live version</button>
+        </a>
+        <a
+          href={proj.repo}
+          class='p-2 border-slate-500 border-[1px] rounded-2xl'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          <button>Repository</button>
+        </a>
+      </div>
+      <div class='flex items-center justify-center gap-x-4 flex-wrap mb-6 mt-4'>
+        {proj.skills.map((skill) => (
+          <button class='text-cyan-300 font-thin'>{skill}</button>
+        ))}
+      </div>
+    </article>
+  ))
+}

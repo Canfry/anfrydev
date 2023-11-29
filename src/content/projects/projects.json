@@ -5,7 +5,7 @@
     "repo": "https://github.com/Canfry/blog-git-issue",
     "website": "https://blog.anfrydev.com/",
     "image": "./images/anfryblog.png",
-    "skills": ["Astro", "Tailwindcss"]
+    "skills": ["Astro", "Tailwindcss", "Typescript"]
   },
   {
     "header": "House Marketplace",
@@ -18,7 +18,7 @@
   {
     "header": "Community Blog",
     "description": "Blog platform where users can create their own blog and share their knowledge and/or experience.",
-    "repo": "https://github.com/Canfry/blog-platform",
+    "repo": "https://github.com/Canfry/blog-plateform",
     "website": "https://community-blog-dia1.onrender.com/",
     "image": "./images/communityblog.png",
     "skills": ["Flask", "PostgresqlDB", "Bootstrap"]
