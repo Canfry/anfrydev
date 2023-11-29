@@ -1,0 +1,12 @@
+---
+import type { CollectionEntry } from 'astro:content';
+interface Props {
+  project: CollectionEntry<'projects'>;
+}
+
+const { project } = Astro.props;
+---
+
+<div>
+  <p>{project.data}</p>
+</div>
