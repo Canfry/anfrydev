@@ -14,22 +14,22 @@ console.log(project);
 {
   project.data.map((proj) => (
     <article class='rounded-2xl shadow-md hover:shadow-lg hover:shadow-zinc-600 shadow-zinc-600 py-1 transition-all ease-out duration-500'>
-      <a href={`/blog/${proj.header}`}>
+      <a href={`/blog/${proj.header.replace(' ', '-')}`}>
         <Image
           src={proj.image}
           alt={proj.header}
           width={1024}
           height={1024 / 2}
-          class='rounded-t-2xl shadow-xl mb-6 aspect-thumbnail object-cover'
+          class='rounded-t-2xl shadow-xl mb-6 aspect-thumbnail object-cover bg-black/30'
         />
       </a>
       <a
-        href={`/blog/${proj.header}`}
-        class='text-3xl text-cyan-300 mb-4 font-thin inline-block px-4'
+        href={`/blog/${proj.header.replace(' ', '-')}`}
+        class='text-3xl text-cyan-400 mb-4 inline-block px-4'
       >
         {proj.header}
       </a>
-      <p class='text-zinc-300 text-lg mb-4 line-clamp-3 px-4'>
+      <p class='text-zinc-400 text-lg mb-4 line-clamp-3 px-4'>
         {proj.description}
       </p>
       <div class='px-4 flex items-center justify-between'>
@@ -37,13 +37,13 @@ console.log(project);
           href={proj.website}
           target='_blank'
           rel='noopener noreferrer'
-          class='p-2 border-slate-500 border-[1px] rounded-2xl'
+          class='p-2 border-orange-400 border-[1px] rounded-2xl text-zinc-300'
         >
           <button>Live version</button>
         </a>
         <a
           href={proj.repo}
-          class='p-2 border-slate-500 border-[1px] rounded-2xl'
+          class='p-2 border-orange-400 border-[1px] rounded-2xl text-zinc-300'
           target='_blank'
           rel='noopener noreferrer'
         >
@@ -52,7 +52,7 @@ console.log(project);
       </div>
       <div class='flex items-center justify-center gap-x-4 flex-wrap mb-6 mt-4'>
         {proj.skills.map((skill) => (
-          <button class='text-cyan-300 font-thin'>{skill}</button>
+          <button class='text-cyan-400 font-bold'>{skill}</button>
         ))}
       </div>
     </article>

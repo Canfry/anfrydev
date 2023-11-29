@@ -11,10 +11,10 @@ const allProjects = await getCollection('projects');
 // console.log(projects);
 ---
 
-<Layout>
+<Layout title='Work'>
   <Main>
     <h1 class='text-4xl text-left mb-4'>My Work</h1>
-    <hr class='w-full h-[1px] bg-slate-500 border-none mb-16' />
+    <hr class='w-full h-[1px] bg-orange-400 border-none mb-16' />
     <ProjectsList projects={allProjects} />
   </Main>
 </Layout>
