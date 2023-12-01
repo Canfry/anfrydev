@@ -12,8 +12,8 @@ if (Astro.request.method === 'POST') {
   const message = data.get('message') as string;
 
   const send = await resend.emails.send({
-    from: 'info@anfrydev.com',
-    to: 'frybcn@gmail.com',
+    from: import.meta.env.FROM_EMAIL,
+    to: import.meta.env.TO_EMAIL,
     subject: 'New contact from AnfryDev',
     html: `<p>Name: ${name}</p><br /><p>Name: ${email}</p><br /><p>Name: ${message}</p>`,
     text: `Name: ${name} Email: ${email} message: ${message}`,
