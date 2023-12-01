@@ -1,5 +1,28 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+import { Resend } from 'resend';
+
+const resend = new Resend(import.meta.env.RESEND_API_KEY);
+
+if (Astro.request.method === 'POST') {
+  const data = await Astro.request.formData();
+  const name = data.get('name') as string;
+  const email = data.get('email') as string;
+  const message = data.get('message') as string;
+
+  const send = await resend.emails.send({
+    from: 'info@anfrydev.com',
+    to: 'frybcn@gmail.com',
+    subject: 'New contact from AnfryDev',
+    html: `<p>Name: ${name}</p><br /><p>Name: ${email}</p><br /><p>Name: ${message}</p>`,
+    text: `Name: ${name} Email: ${email} message: ${message}`,
+  });
+
+  if (send.data) {
+    return Astro.redirect('/contact');
+  }
+}
 ---
 
 <Layout title='Contact'>
@@ -10,7 +33,7 @@ import Layout from '../layouts/Layout.astro';
     <div
       class='grid grid-cols-1 px-8 py-10 bg-zinc-950/40 mt-8 max-md:w-full w-[60%]'
     >
-      <form action='/api/sendEmail.json' method='post'>
+      <form method='POST'>
         <div class='grid grid-cols-1 gap-6'>
           <label class='block'>
             <span class='text-zinc-300 text-lg'>Name</span>
