@@ -7,6 +7,13 @@ export default {
         thumbnail: '1.3',
       },
     },
+    // colors: {
+    //   dark: '#18181b',
+    //   [#07b6D5]: '#07b6D5',
+    //   darkGray: '#94849b',
+    //   [#fdfff7]: '#fdfff7',
+    //   lightGray: '#f2efea',
+    // },
   },
   plugins: [require('daisyui')],
 };
