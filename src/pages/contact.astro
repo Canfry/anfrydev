@@ -15,11 +15,12 @@ if (Astro.request.method === 'POST') {
     from: import.meta.env.FROM_EMAIL,
     to: import.meta.env.FROM_EMAIL,
     subject: 'New contact from AnfryDev',
-    html: `<p>Name: ${name}</p><p>Name: ${email}</p><p>Name: ${message}</p>`,
+    html: `<p>Name: ${name}</p><p>Email: ${email}</p><p>Message: ${message}</p>`,
     text: `Name: ${name} Email: ${email} message: ${message}`,
   });
 
   if (send.data) {
+    console.log(send);
     return Astro.redirect('/contact');
   }
 }
@@ -43,6 +44,7 @@ if (Astro.request.method === 'POST') {
               id='name'
               placeholder='Enter your name'
               required
+              autocomplete='off'
               class='mt-1 block w-full rounded-sm bg-zinc-950/80 border-transparent outline-[#07b6D5] py-2 px-3'
             />
           </label>
@@ -54,6 +56,7 @@ if (Astro.request.method === 'POST') {
               id='email'
               placeholder='Enter your email'
               required
+              autocomplete='off'
               class='mt-1 block w-full rounded-sm bg-zinc-950/80 border-transparent outline-[#07b6D5] py-2 px-3'
             />
           </label>
@@ -65,6 +68,7 @@ if (Astro.request.method === 'POST') {
               rows='3'
               placeholder='Enter your message'
               required
+              autocomplete='off'
               class='mt-1 block w-full rounded-sm bg-zinc-950/80 border-transparent outline-[#07b6D5] py-2 px-3'
             ></textarea>
           </label>
