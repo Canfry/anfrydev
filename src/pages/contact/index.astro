@@ -1,5 +1,5 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../../layouts/Layout.astro';
 
 import { Resend } from 'resend';
 
@@ -20,8 +20,7 @@ if (Astro.request.method === 'POST') {
   });
 
   if (send.data) {
-    console.log(send);
-    return Astro.redirect('/contact');
+    return Astro.redirect('/contact/success');
   }
 }
 ---
