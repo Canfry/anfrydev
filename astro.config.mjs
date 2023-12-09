@@ -9,4 +9,8 @@ export default defineConfig({
   site: 'https://www.anfrydev.com',
   output: 'server',
   adapter: vercel(),
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'es', 'fr'],
+  },
 });
