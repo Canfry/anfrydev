@@ -1,9 +1,63 @@
 ---
 import Icon from 'astro-icon';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+const aboutEsUrl = getRelativeLocaleUrl('/es/about', 'es');
+const workEsUrl = getRelativeLocaleUrl('/es/work', 'es');
+const contactEsUrl = getRelativeLocaleUrl('/es/contact', 'es');
+
+const aboutFrUrl = getRelativeLocaleUrl('/fr/about', 'fr');
+const workFrUrl = getRelativeLocaleUrl('/fr/work', 'fr');
+const contactFrUrl = getRelativeLocaleUrl('/fr/contact', 'fr');
 ---
 
 <div class='flex items-center justify-between'>
-  <a href='/' class='text-[#07b6D5] text-5xl'>AnfryDev</a>
+  <div class='flex items-center gap-x-4'>
+    <a href='/' class='text-[#07b6D5] text-5xl'>AnfryDev</a>
+    <div class='dropdown'>
+      <div tabindex={0} role='button' class='btn m-1'>
+        {
+          Astro.url.pathname === '/es' ||
+          Astro.url.pathname === '/es/about' ||
+          Astro.url.pathname === '/es/work' ||
+          Astro.url.pathname === '/es/contact'
+            ? 'ES'
+            : Astro.url.pathname === '/es' ||
+              Astro.url.pathname === '/es/about' ||
+              Astro.url.pathname === '/es/work' ||
+              Astro.url.pathname === '/es/contact'
+            ? 'FR'
+            : 'EN'
+        }
+      </div>
+      <ul
+        tabindex={0}
+        class='dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52'
+      >
+        <li>
+          <a
+            class={`
+          ${Astro.url.pathname === '/' ? 'text-[#07b6D5] font-bold' : ''}
+        `}>EN</a
+          >
+        </li>
+        <li>
+          <a
+            class={`
+          ${Astro.url.pathname === '/es' ? 'text-[#07b6D5] font-bold' : ''}
+        `}>ES</a
+          >
+        </li>
+        <li>
+          <a
+            class={`
+          ${Astro.url.pathname === '/fr' ? 'text-[#07b6D5] font-bold' : ''}
+        `}>FR</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
   <nav class='max-md:hidden'>
     <ul class='flex items-center justify-center gap-x-8'>
       <a
