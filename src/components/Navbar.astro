@@ -2,6 +2,9 @@
 import Icon from 'astro-icon';
 import { getRelativeLocaleUrl } from 'astro:i18n';
 
+const indexEsUrl = getRelativeLocaleUrl('es', '');
+const indexFrUrl = getRelativeLocaleUrl('fr', '');
+
 const aboutEsUrl = getRelativeLocaleUrl('es', 'about');
 const workEsUrl = getRelativeLocaleUrl('es', 'work');
 const contactEsUrl = getRelativeLocaleUrl('es', 'contact');
@@ -12,20 +15,18 @@ const contactFrUrl = getRelativeLocaleUrl('fr', 'contact');
 ---
 
 <div class='flex items-center justify-between'>
-  <div class='flex items-center gap-x-4'>
+  <div class='flex items-center gap-x-8'>
     <a href='/' class='text-[#07b6D5] text-5xl'>AnfryDev</a>
     <div class='dropdown'>
-      <div tabindex={0} role='button' class='btn m-1'>
+      <div
+        tabindex={0}
+        role='button'
+        class='btn m-1 bg-transparent hover:border hover:border-1 hover:border-[#07b6D5] shadow-md shadow-[#07b6D5] hover:shadow-none'
+      >
         {
-          Astro.url.pathname === '/es' ||
-          Astro.url.pathname === '/es/about' ||
-          Astro.url.pathname === '/es/work' ||
-          Astro.url.pathname === '/es/contact'
+          Astro.url.pathname.startsWith('/es/')
             ? 'ES'
-            : Astro.url.pathname === '/es' ||
-              Astro.url.pathname === '/es/about' ||
-              Astro.url.pathname === '/es/work' ||
-              Astro.url.pathname === '/es/contact'
+            : Astro.url.pathname.startsWith('/fr/')
             ? 'FR'
             : 'EN'
         }
@@ -36,6 +37,7 @@ const contactFrUrl = getRelativeLocaleUrl('fr', 'contact');
       >
         <li>
           <a
+            href='/'
             class={`
           ${Astro.url.pathname === '/' ? 'text-[#07b6D5] font-bold' : ''}
         `}>EN</a
@@ -43,52 +45,104 @@ const contactFrUrl = getRelativeLocaleUrl('fr', 'contact');
         </li>
         <li>
           <a
+            href={indexEsUrl}
             class={`
-          ${Astro.url.pathname === '/es' ? 'text-[#07b6D5] font-bold' : ''}
+          ${
+            Astro.url.pathname.startsWith('/es/')
+              ? 'text-[#07b6D5] font-bold'
+              : ''
+          }
         `}>ES</a
           >
         </li>
         <li>
           <a
+            href={indexFrUrl}
             class={`
-          ${Astro.url.pathname === '/fr' ? 'text-[#07b6D5] font-bold' : ''}
+          ${
+            Astro.url.pathname.startsWith('/fr/')
+              ? 'text-[#07b6D5] font-bold'
+              : ''
+          }
         `}>FR</a
           >
         </li>
       </ul>
     </div>
   </div>
-  <nav class='max-md:hidden'>
+  <nav class='max-lg:hidden'>
     <ul class='flex items-center justify-center gap-x-8'>
       <a
-        href='/'
+        href={Astro.url.pathname.startsWith('/es/')
+          ? `${indexEsUrl}`
+          : Astro.url.pathname.startsWith('/fr/')
+          ? `${indexFrUrl}`
+          : '/'}
         class={`text-xl transition ease-out hover:text-[#94849b] duration-300  ${
-          Astro.url.pathname === '/'
+          Astro.url.pathname === '/' ||
+          Astro.url.pathname === '/es/' ||
+          Astro.url.pathname === '/fr/'
             ? 'text-[#fdfff7] border-b-2 border-[#07b6D5] hover:text-[#fdfff7]'
             : 'text-gray-400 border-none'
         } `}
       >
-        <li>Home</li>
+        <li>
+          {
+            Astro.url.pathname.startsWith('/es/')
+              ? 'Inicio'
+              : Astro.url.pathname.startsWith('/fr/')
+              ? 'Accueil'
+              : 'Home'
+          }
+        </li>
       </a>
       <a
-        href='/about'
+        href={Astro.url.pathname.startsWith('/es/')
+          ? `${aboutEsUrl}`
+          : Astro.url.pathname.startsWith('/fr/')
+          ? `${aboutFrUrl}`
+          : '/about'}
         class={`text-xl transition ease-out hover:text-[#94849b] duration-300 ${
-          Astro.url.pathname === '/about'
+          Astro.url.pathname === '/about' ||
+          Astro.url.pathname === '/es/about/' ||
+          Astro.url.pathname === '/fr/about/'
             ? 'text-[#fdfff7] border-b-2 border-[#07b6D5] hover:text-[#fdfff7]'
             : 'text-gray-400 border-none'
         } `}
       >
-        <li>About</li>
+        <li>
+          {
+            Astro.url.pathname.startsWith('/es/')
+              ? 'Acerca de'
+              : Astro.url.pathname.startsWith('/fr/')
+              ? 'A propos'
+              : 'About'
+          }
+        </li>
       </a>
       <a
-        href='/work'
+        href={Astro.url.pathname.startsWith('/es/')
+          ? `${workEsUrl}`
+          : Astro.url.pathname.startsWith('/fr/')
+          ? `${workFrUrl}`
+          : '/work'}
         class={`text-xl transition ease-out hover:text-[#94849b] duration-300 ${
-          Astro.url.pathname === '/work'
+          Astro.url.pathname === '/work' ||
+          Astro.url.pathname === '/es/work/' ||
+          Astro.url.pathname === '/fr/work/'
             ? 'text-[#fdfff7] border-b-2 border-[#07b6D5] hover:text-[#fdfff7]'
             : 'text-gray-400 border-none'
         } `}
       >
-        <li>Work</li>
+        <li>
+          {
+            Astro.url.pathname.startsWith('/es/')
+              ? 'Trabajo'
+              : Astro.url.pathname.startsWith('/fr/')
+              ? 'Travail'
+              : 'Work'
+          }
+        </li>
       </a>
       <a
         href='https://blog.anfrydev.com'
@@ -102,18 +156,32 @@ const contactFrUrl = getRelativeLocaleUrl('fr', 'contact');
         <li>Blog</li>
       </a>
       <a
-        href='/contact'
+        href={Astro.url.pathname.startsWith('/es/')
+          ? `${contactEsUrl}`
+          : Astro.url.pathname.startsWith('/fr/')
+          ? `${contactFrUrl}`
+          : '/contact'}
         class={`text-xl transition ease-out hover:text-[#94849b] duration-300 ${
-          Astro.url.pathname === '/contact'
+          Astro.url.pathname === '/contact' ||
+          Astro.url.pathname === '/es/contact/' ||
+          Astro.url.pathname === '/fr/contact/'
             ? 'text-[#fdfff7] border-b-2 border-[#07b6D5] hover:text-[#fdfff7]'
             : 'text-gray-400 border-none'
         } `}
       >
-        <li>Contact</li>
+        <li>
+          {
+            Astro.url.pathname.startsWith('/es/')
+              ? 'Contacto'
+              : Astro.url.pathname.startsWith('/fr/')
+              ? 'Contact'
+              : 'Contact'
+          }
+        </li>
       </a>
     </ul>
   </nav>
-  <div class='hidden max-md:block'>
+  <div class='hidden max-lg:block'>
     <div class='dropdown dropdown-end'>
       <label
         tabindex={0}
@@ -130,32 +198,71 @@ const contactFrUrl = getRelativeLocaleUrl('fr', 'contact');
       >
         <li>
           <a
-            href='/'
+            href={Astro.url.pathname.startsWith('/es/')
+              ? `${indexEsUrl}`
+              : Astro.url.pathname.startsWith('/fr/')
+              ? `${indexFrUrl}`
+              : '/'}
             class={`text-lg transition ease-out hover:text-[#94849b] duration-300 ${
-              Astro.url.pathname === '/'
+              Astro.url.pathname === '/' ||
+              Astro.url.pathname === '/es/' ||
+              Astro.url.pathname === '/fr/'
                 ? 'text-[#07b6D5]'
                 : 'text-gray-200 border-none'
-            } `}>Home</a
+            } `}
+            >{
+              Astro.url.pathname.startsWith('/es/')
+                ? 'Inicio'
+                : Astro.url.pathname.startsWith('/fr/')
+                ? 'Accueil'
+                : 'Home'
+            }</a
           >
         </li>
         <li>
           <a
-            href='/about'
+            href={Astro.url.pathname.startsWith('/es/')
+              ? `${aboutEsUrl}`
+              : Astro.url.pathname.startsWith('/fr/')
+              ? `${aboutFrUrl}`
+              : '/about'}
             class={`text-lg transition ease-out hover:text-[#94849b] duration-300 ${
-              Astro.url.pathname === '/about'
+              Astro.url.pathname === '/about' ||
+              Astro.url.pathname === '/es/about/' ||
+              Astro.url.pathname === '/fr/about/'
                 ? 'text-[#07b6D5]'
                 : 'text-gray-200 border-none'
-            } `}>About</a
+            } `}
+            >{
+              Astro.url.pathname.startsWith('/es/')
+                ? 'Acerca de'
+                : Astro.url.pathname.startsWith('/fr/')
+                ? 'A propos'
+                : 'About'
+            }</a
           >
         </li>
         <li>
           <a
-            href='/work'
+            href={Astro.url.pathname.startsWith('/es/')
+              ? `${workEsUrl}`
+              : Astro.url.pathname.startsWith('/fr/')
+              ? `${workFrUrl}`
+              : '/work'}
             class={`text-lg transition ease-out hover:text-[#94849b] duration-300 ${
-              Astro.url.pathname === '/work'
+              Astro.url.pathname === '/work' ||
+              Astro.url.pathname === '/es/work/' ||
+              Astro.url.pathname === '/fr/work/'
                 ? 'text-[#07b6D5]'
                 : 'text-gray-200 border-none'
-            } `}>Work</a
+            } `}
+            >{
+              Astro.url.pathname.startsWith('/es/')
+                ? 'Trabajo'
+                : Astro.url.pathname.startsWith('/fr/')
+                ? 'Travail'
+                : 'Work'
+            }</a
           >
         </li>
         <li>
@@ -171,12 +278,25 @@ const contactFrUrl = getRelativeLocaleUrl('fr', 'contact');
         </li>
         <li>
           <a
-            href='/contact'
+            href={Astro.url.pathname.startsWith('/es/')
+              ? `${contactEsUrl}`
+              : Astro.url.pathname.startsWith('/fr/')
+              ? `${contactFrUrl}`
+              : '/contact'}
             class={`text-lg transition ease-out hover:text-[#94849b] duration-300 ${
-              Astro.url.pathname === '/contact'
+              Astro.url.pathname === '/contact' ||
+              Astro.url.pathname === '/es/contact/' ||
+              Astro.url.pathname === '/fr/contact/'
                 ? 'text-[#07b6D5]'
                 : 'text-gray-200 border-none'
-            } `}>Contact</a
+            } `}
+            >{
+              Astro.url.pathname.startsWith('/es/')
+                ? 'Contacto'
+                : Astro.url.pathname.startsWith('/fr/')
+                ? 'Contact'
+                : 'Contact'
+            }</a
           >
         </li>
       </ul>

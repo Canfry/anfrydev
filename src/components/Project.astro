@@ -30,7 +30,11 @@ const { project } = Astro.props;
           {proj.header}
         </a>
         <p class='text-[#f2efea] text-lg mb-6 line-clamp-3 px-4'>
-          {proj.description}
+          {Astro.url.pathname.startsWith('/es')
+            ? proj.descriptionEs
+            : Astro.url.pathname.startsWith('/fr')
+            ? proj.descriptionFr
+            : proj.description}
         </p>
         <div class='px-4 flex items-center justify-between'>
           <a
