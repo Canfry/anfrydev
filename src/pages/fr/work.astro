@@ -1,0 +1,16 @@
+---
+import { getCollection } from 'astro:content';
+import Main from '../../components/Main.astro';
+import Layout from '../../layouts/Layout.astro';
+import ProjectsList from '../../components/ProjectsList.astro';
+
+const allProjects = await getCollection('projects');
+---
+
+<Layout title='Work'>
+  <Main>
+    <h1 class='text-4xl text-left mb-4 text-[#fdfff7]'>Mon travail</h1>
+    <hr class='w-full h-[1px] bg-[#07b6D5] border-none mb-16' />
+    <ProjectsList projects={allProjects} />
+  </Main>
+</Layout>

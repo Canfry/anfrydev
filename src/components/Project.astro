@@ -33,8 +33,8 @@ const { project } = Astro.props;
           {Astro.url.pathname.startsWith('/es')
             ? proj.descriptionEs
             : Astro.url.pathname.startsWith('/fr')
-            ? proj.descriptionFr
-            : proj.description}
+              ? proj.descriptionFr
+              : proj.description}
         </p>
         <div class='px-4 flex items-center justify-between'>
           <a
@@ -43,7 +43,13 @@ const { project } = Astro.props;
             rel='noopener noreferrer'
             class='p-2 border-[#07b6D5] border-[2px] rounded-2xl text-[#fdfff7] hover:scale-105 transition-all ease-out duration-500'
           >
-            <button>Live version</button>
+            <button>
+              {Astro.url.pathname.startsWith('/es')
+                ? 'Pagina web'
+                : Astro.url.pathname.startsWith('/fr')
+                  ? 'Page web'
+                  : 'Live'}
+            </button>
           </a>
           <a
             href={proj.repo}
@@ -51,7 +57,13 @@ const { project } = Astro.props;
             target='_blank'
             rel='noopener noreferrer'
           >
-            <button>Repository</button>
+            <button>
+              {Astro.url.pathname.startsWith('/es')
+                ? 'Codigo'
+                : Astro.url.pathname.startsWith('/fr')
+                  ? 'Code'
+                  : 'Repository'}
+            </button>
           </a>
         </div>
         <div class='flex items-center justify-center gap-x-4 flex-wrap mb-6 mt-4'>

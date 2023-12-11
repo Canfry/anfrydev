@@ -27,8 +27,8 @@ const contactFrUrl = getRelativeLocaleUrl('fr', 'contact');
           Astro.url.pathname.startsWith('/es/')
             ? 'ES'
             : Astro.url.pathname.startsWith('/fr/')
-            ? 'FR'
-            : 'EN'
+              ? 'FR'
+              : 'EN'
         }
       </div>
       <ul
@@ -37,7 +37,13 @@ const contactFrUrl = getRelativeLocaleUrl('fr', 'contact');
       >
         <li>
           <a
-            href='/'
+            href={Astro.url.pathname.includes('/work')
+              ? '/work'
+              : Astro.url.pathname.includes('/about')
+                ? '/about'
+                : Astro.url.pathname.includes('/contact')
+                  ? '/contact'
+                  : '/'}
             class={`
           ${Astro.url.pathname === '/' ? 'text-[#07b6D5] font-bold' : ''}
         `}>EN</a
@@ -45,7 +51,13 @@ const contactFrUrl = getRelativeLocaleUrl('fr', 'contact');
         </li>
         <li>
           <a
-            href={indexEsUrl}
+            href={Astro.url.pathname.includes('/work')
+              ? workEsUrl
+              : Astro.url.pathname.includes('/about')
+                ? aboutEsUrl
+                : Astro.url.pathname.includes('/contact')
+                  ? contactEsUrl
+                  : '/es/'}
             class={`
           ${
             Astro.url.pathname.startsWith('/es/')
@@ -57,7 +69,13 @@ const contactFrUrl = getRelativeLocaleUrl('fr', 'contact');
         </li>
         <li>
           <a
-            href={indexFrUrl}
+            href={Astro.url.pathname.includes('/work')
+              ? workFrUrl
+              : Astro.url.pathname.includes('/about')
+                ? aboutFrUrl
+                : Astro.url.pathname.includes('/contact')
+                  ? contactFrUrl
+                  : '/fr/'}
             class={`
           ${
             Astro.url.pathname.startsWith('/fr/')
@@ -76,8 +94,8 @@ const contactFrUrl = getRelativeLocaleUrl('fr', 'contact');
         href={Astro.url.pathname.startsWith('/es/')
           ? `${indexEsUrl}`
           : Astro.url.pathname.startsWith('/fr/')
-          ? `${indexFrUrl}`
-          : '/'}
+            ? `${indexFrUrl}`
+            : '/'}
         class={`text-xl transition ease-out hover:text-[#94849b] duration-300  ${
           Astro.url.pathname === '/' ||
           Astro.url.pathname === '/es/' ||
@@ -91,8 +109,8 @@ const contactFrUrl = getRelativeLocaleUrl('fr', 'contact');
             Astro.url.pathname.startsWith('/es/')
               ? 'Inicio'
               : Astro.url.pathname.startsWith('/fr/')
-              ? 'Accueil'
-              : 'Home'
+                ? 'Accueil'
+                : 'Home'
           }
         </li>
       </a>
@@ -100,8 +118,8 @@ const contactFrUrl = getRelativeLocaleUrl('fr', 'contact');
         href={Astro.url.pathname.startsWith('/es/')
           ? `${aboutEsUrl}`
           : Astro.url.pathname.startsWith('/fr/')
-          ? `${aboutFrUrl}`
-          : '/about'}
+            ? `${aboutFrUrl}`
+            : '/about'}
         class={`text-xl transition ease-out hover:text-[#94849b] duration-300 ${
           Astro.url.pathname === '/about' ||
           Astro.url.pathname === '/es/about/' ||
@@ -115,8 +133,8 @@ const contactFrUrl = getRelativeLocaleUrl('fr', 'contact');
             Astro.url.pathname.startsWith('/es/')
               ? 'Acerca de'
               : Astro.url.pathname.startsWith('/fr/')
-              ? 'A propos'
-              : 'About'
+                ? 'A propos'
+                : 'About'
           }
         </li>
       </a>
@@ -124,8 +142,8 @@ const contactFrUrl = getRelativeLocaleUrl('fr', 'contact');
         href={Astro.url.pathname.startsWith('/es/')
           ? `${workEsUrl}`
           : Astro.url.pathname.startsWith('/fr/')
-          ? `${workFrUrl}`
-          : '/work'}
+            ? `${workFrUrl}`
+            : '/work'}
         class={`text-xl transition ease-out hover:text-[#94849b] duration-300 ${
           Astro.url.pathname === '/work' ||
           Astro.url.pathname === '/es/work/' ||
@@ -139,8 +157,8 @@ const contactFrUrl = getRelativeLocaleUrl('fr', 'contact');
             Astro.url.pathname.startsWith('/es/')
               ? 'Trabajo'
               : Astro.url.pathname.startsWith('/fr/')
-              ? 'Travail'
-              : 'Work'
+                ? 'Travail'
+                : 'Work'
           }
         </li>
       </a>
@@ -159,8 +177,8 @@ const contactFrUrl = getRelativeLocaleUrl('fr', 'contact');
         href={Astro.url.pathname.startsWith('/es/')
           ? `${contactEsUrl}`
           : Astro.url.pathname.startsWith('/fr/')
-          ? `${contactFrUrl}`
-          : '/contact'}
+            ? `${contactFrUrl}`
+            : '/contact'}
         class={`text-xl transition ease-out hover:text-[#94849b] duration-300 ${
           Astro.url.pathname === '/contact' ||
           Astro.url.pathname === '/es/contact/' ||
@@ -174,8 +192,8 @@ const contactFrUrl = getRelativeLocaleUrl('fr', 'contact');
             Astro.url.pathname.startsWith('/es/')
               ? 'Contacto'
               : Astro.url.pathname.startsWith('/fr/')
-              ? 'Contact'
-              : 'Contact'
+                ? 'Contact'
+                : 'Contact'
           }
         </li>
       </a>
@@ -201,8 +219,8 @@ const contactFrUrl = getRelativeLocaleUrl('fr', 'contact');
             href={Astro.url.pathname.startsWith('/es/')
               ? `${indexEsUrl}`
               : Astro.url.pathname.startsWith('/fr/')
-              ? `${indexFrUrl}`
-              : '/'}
+                ? `${indexFrUrl}`
+                : '/'}
             class={`text-lg transition ease-out hover:text-[#94849b] duration-300 ${
               Astro.url.pathname === '/' ||
               Astro.url.pathname === '/es/' ||
@@ -214,8 +232,8 @@ const contactFrUrl = getRelativeLocaleUrl('fr', 'contact');
               Astro.url.pathname.startsWith('/es/')
                 ? 'Inicio'
                 : Astro.url.pathname.startsWith('/fr/')
-                ? 'Accueil'
-                : 'Home'
+                  ? 'Accueil'
+                  : 'Home'
             }</a
           >
         </li>
@@ -224,8 +242,8 @@ const contactFrUrl = getRelativeLocaleUrl('fr', 'contact');
             href={Astro.url.pathname.startsWith('/es/')
               ? `${aboutEsUrl}`
               : Astro.url.pathname.startsWith('/fr/')
-              ? `${aboutFrUrl}`
-              : '/about'}
+                ? `${aboutFrUrl}`
+                : '/about'}
             class={`text-lg transition ease-out hover:text-[#94849b] duration-300 ${
               Astro.url.pathname === '/about' ||
               Astro.url.pathname === '/es/about/' ||
@@ -237,8 +255,8 @@ const contactFrUrl = getRelativeLocaleUrl('fr', 'contact');
               Astro.url.pathname.startsWith('/es/')
                 ? 'Acerca de'
                 : Astro.url.pathname.startsWith('/fr/')
-                ? 'A propos'
-                : 'About'
+                  ? 'A propos'
+                  : 'About'
             }</a
           >
         </li>
@@ -247,8 +265,8 @@ const contactFrUrl = getRelativeLocaleUrl('fr', 'contact');
             href={Astro.url.pathname.startsWith('/es/')
               ? `${workEsUrl}`
               : Astro.url.pathname.startsWith('/fr/')
-              ? `${workFrUrl}`
-              : '/work'}
+                ? `${workFrUrl}`
+                : '/work'}
             class={`text-lg transition ease-out hover:text-[#94849b] duration-300 ${
               Astro.url.pathname === '/work' ||
               Astro.url.pathname === '/es/work/' ||
@@ -260,8 +278,8 @@ const contactFrUrl = getRelativeLocaleUrl('fr', 'contact');
               Astro.url.pathname.startsWith('/es/')
                 ? 'Trabajo'
                 : Astro.url.pathname.startsWith('/fr/')
-                ? 'Travail'
-                : 'Work'
+                  ? 'Travail'
+                  : 'Work'
             }</a
           >
         </li>
@@ -281,8 +299,8 @@ const contactFrUrl = getRelativeLocaleUrl('fr', 'contact');
             href={Astro.url.pathname.startsWith('/es/')
               ? `${contactEsUrl}`
               : Astro.url.pathname.startsWith('/fr/')
-              ? `${contactFrUrl}`
-              : '/contact'}
+                ? `${contactFrUrl}`
+                : '/contact'}
             class={`text-lg transition ease-out hover:text-[#94849b] duration-300 ${
               Astro.url.pathname === '/contact' ||
               Astro.url.pathname === '/es/contact/' ||
@@ -294,8 +312,8 @@ const contactFrUrl = getRelativeLocaleUrl('fr', 'contact');
               Astro.url.pathname.startsWith('/es/')
                 ? 'Contacto'
                 : Astro.url.pathname.startsWith('/fr/')
-                ? 'Contact'
-                : 'Contact'
+                  ? 'Contact'
+                  : 'Contact'
             }</a
           >
         </li>
