@@ -4,8 +4,6 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { ViewTransitions } from 'astro:transitions';
 
-import { SpeedInsights } from '@vercel/speed-insights/next';
-
 interface Props {
   title?: string;
   description?: string;
@@ -59,7 +57,6 @@ const {
     />
     <Header />
     <slot />
-    <SpeedInsights />
     <Footer />
     <style is:global>
       @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700&display=swap');
