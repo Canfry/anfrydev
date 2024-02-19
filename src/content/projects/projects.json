@@ -20,7 +20,7 @@
 		"descriptionFr": "Visualisez les données de vos fichiers CSV dans un tableau. Projet vainqueur du Hackathon Xata 2024.",
 		"repo": "https://github.com/Canfry/easy-csv",
 		"website": "https://easy-csv.netlify.app/",
-		"image": "./images/easy-csv-2.png",
+		"image": "./images/easy-csv-3.png",
 		"skills": [
 			"Astro",
 			"Typescript",
