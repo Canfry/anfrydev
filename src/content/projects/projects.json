@@ -1,42 +1,59 @@
 [
-  {
-    "header": "Blog",
-    "description": "Creation of my personal blog, using Astro framework and Tailwindcss.",
-    "descriptionEs": "Creación di mi blog personal utilizando Astro y Tailwindcss.",
-    "descriptionFr": "Creation de mon blog personnel utilisant la framework Astro et Tailwindcss.",
-    "repo": "https://github.com/Canfry/blog-git-issue",
-    "website": "https://blog.anfrydev.com/",
-    "image": "./images/anfryblog.png",
-    "skills": ["Astro", "Tailwindcss", "Typescript"]
-  },
-  {
-    "header": "House Marketplace",
-    "description": "Marketplace where you can manage sales or rent for your properties.",
-    "descriptionEs": "Aplicación donde se puede organizar ventas o alquiler de propiedad.",
-    "descriptionFr": "Marketplace où on peut organiser des ventes et des achats de propiétés.",
-    "repo": "https://github.com/Canfry/house_marketplace",
-    "website": "https://house-marketplace-ohnfpalam-canfry.vercel.app/",
-    "image": "./images/house-marketplace.png",
-    "skills": ["React", "Firebase", "CSS"]
-  },
-  {
-    "header": "Community Blog",
-    "description": "Blog platform where users can create their own blog and share their knowledge and/or experience.",
-    "descriptionEs": "Una plataforma de blog donde los usuarios pueden crear su propio blog y compartir sus experiencas y conocimientos.",
-    "descriptionFr": "Plateforme de blog où les utilisateurs peuvent créer leur blog et partager leurs connaissances et leurs experiences.",
-    "repo": "https://github.com/Canfry/blog-plateform",
-    "website": "https://community-blog-dia1.onrender.com/",
-    "image": "./images/communityblog.png",
-    "skills": ["Flask", "PostgresqlDB", "Bootstrap"]
-  },
-  {
-    "header": "Tasks List",
-    "description": "A simple but functional task list, where you can add, edit and delete tasks.",
-    "descriptionEs": "Una simple pero funcional aplicación de gestión de tareas.",
-    "descriptionFr": "Une simple mais fonctionnelle application de gestion de tâches.",
-    "repo": "https://github.com/Canfry/myTasks",
-    "website": "https://mytasks.deno.dev/",
-    "image": "./images/tasks.png",
-    "skills": ["Fresh", "Typescript", "Tailwindcss"]
-  }
+	{
+		"header": "Blog",
+		"description": "Creation of my personal blog, using Astro framework and Tailwindcss.",
+		"descriptionEs": "Creación di mi blog personal utilizando Astro y Tailwindcss.",
+		"descriptionFr": "Creation de mon blog personnel utilisant la framework Astro et Tailwindcss.",
+		"repo": "https://github.com/Canfry/blog-git-issue",
+		"website": "https://blog.anfrydev.com/",
+		"image": "./images/anfryblog.png",
+		"skills": [
+			"Astro",
+			"Tailwindcss",
+			"Typescript"
+		]
+	},
+	{
+		"header": "Easy CSV",
+		"description": "Visualize the data of your CSV file in a table. Winner of the 2024 Xata Hackathon.",
+		"descriptionEs": "Visualiza los datos de tus ficheros CSV en una tabla. Proyecto ganador del Hackathon Xata 2024.",
+		"descriptionFr": "Visualisez les données de vos fichiers CSV dans un tableau. Projet vainqueur du Hackathon Xata 2024.",
+		"repo": "https://github.com/Canfry/easy-csv",
+		"website": "https://easy-csv.netlify.app/",
+		"image": "./images/easy-csv.png",
+		"skills": [
+			"Astro",
+			"Typescript",
+			"Xata DB",
+			"Tailwindcss"
+		]
+	},
+	{
+		"header": "Community Blog",
+		"description": "Blog platform where users can create their own blog and share their knowledge and/or experience.",
+		"descriptionEs": "Una plataforma de blog donde los usuarios pueden crear su propio blog y compartir sus experiencas y conocimientos.",
+		"descriptionFr": "Plateforme de blog où les utilisateurs peuvent créer leur blog et partager leurs connaissances et leurs experiences.",
+		"repo": "https://github.com/Canfry/blog-plateform",
+		"website": "https://community-blog-dia1.onrender.com/",
+		"image": "./images/communityblog.png",
+		"skills": [
+			"Flask",
+			"PostgresqlDB",
+			"Bootstrap"
+		]
+	},
+	{
+		"header": "Tasks List",
+		"description": "A simple but functional task list, where you can add, edit and delete tasks.",
+		"descriptionEs": "Una simple pero funcional aplicación de gestión de tareas.",
+		"descriptionFr": "Une simple mais fonctionnelle application de gestion de tâches.",
+		"repo": "https://github.com/Canfry/myTasks",
+		"website": "https://mytasks.deno.dev/",
+		"image": "./images/tasks.png",
+		"skills": [
+			"Fresh",
+			"Typescript",
+			"Tailwindcss"
+		]
+	}
 ]
