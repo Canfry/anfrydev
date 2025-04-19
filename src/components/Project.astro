@@ -14,7 +14,7 @@ const { project } = Astro.props;
   project.data.map((proj) => (
     <>
       <article class='rounded-2xl shadow-md hover:shadow-lg mb-6 hover:shadow-[#94849b] shadow-zinc-600 py-1 transition-all ease-out duration-500'>
-        <a href={`/blog/${proj.header.replace(' ', '-')}`}>
+        <a href={proj.website}>
           <Image
             src={proj.image}
             alt={proj.header}
@@ -24,7 +24,7 @@ const { project } = Astro.props;
           />
         </a>
         <a
-          href={`/blog/${proj.header.replace(' ', '-')}`}
+          href={proj.website}
           class='text-3xl text-cyan-400 mb-2 inline-block px-4'
         >
           {proj.header}
